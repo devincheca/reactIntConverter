@@ -1,21 +1,44 @@
-﻿function fromDecimalToBinary(decimal)
+﻿function fromDecimal()
 {
   var input = document.getElementById('decimal').value;
   var stack = [];
   var quotient = input;
   var temp = 0;
   var binary = "";
+  var octal = "";
+  var hex = "";
   while (quotient !== 0)
   {
     temp = quotient;
-    quotient = parseInt(quotient / 2.0);
+    quotient = parseInt(quotient / 2);
     stack.push(temp % 2);
   }
+  stack.reverse();
   stack.map((binChar) =>
   {
     binary += binChar;
   });
   document.getElementById('binary').value = binary;
+  quotient = input;
+  while (quotient !== 0)
+  {
+    temp = quotient;
+    quotient = parseInt(quotient / 16);
+    stack.push(temp % 16);
+  }
+  stack.reverse();
+  stack.map((hexChar) =>
+  {
+    if (hexChar <= 9)
+    {
+      hex += hexChar;
+    }
+    else
+    {
+      
+    }
+  });
+  document.getElementById('hex').value = hex;  
 }
 function fromOctalToBinary(octal)
 {
