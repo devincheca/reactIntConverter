@@ -19,6 +19,7 @@
     binary += binChar;
   });
   document.getElementById('binary').value = binary;
+  stack = [];
   quotient = input;
   while (quotient !== 0)
   {
@@ -35,7 +36,30 @@
     }
     else
     {
-      
+      switch(hexChar)
+      {
+	case 10:
+	  hex += 'A';
+	  break;
+	case 11:
+	  hex += 'B';
+	  break;
+	case 12:
+	  hex += 'C';
+	  break;
+	case 13:
+	  hex += 'D';
+	  break;
+	case 14:
+	  hex += 'E';
+	  break;
+	case 15:
+	  hex += 'F';
+	  break;
+	case 16:
+	  hex += 'G';
+	  break;
+      }
     }
   });
   document.getElementById('hex').value = hex;  
