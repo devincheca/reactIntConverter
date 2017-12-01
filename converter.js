@@ -24,6 +24,20 @@
   while (quotient !== 0)
   {
     temp = quotient;
+    quotient = parseInt(quotient / 8);
+    stack.push(temp % 8);
+  }
+  stack.reverse();
+  stack.map((octalChar) =>
+  {
+    octal += octalChar;
+  });
+  document.getElementById('octal').value = octal;
+  stack = [];
+  quotient = input;
+  while (quotient !== 0)
+  {
+    temp = quotient;
     quotient = parseInt(quotient / 16);
     stack.push(temp % 16);
   }
@@ -64,47 +78,25 @@
   });
   document.getElementById('hex').value = hex;  
 }
-function fromOctalToBinary(octal)
+function fromOctal()
+{
+  // use string.charCodeAt(1); for getting character codes
+}
+function fromHex()
 {
   
 }
-function fromHexToBinary(hex)
+function fromBinary()
 {
-  
-}
-function fromBinaryToOctal(binary)
-{
-  
-}
-function fromDecimalToOctal(decimal)
-{
-  
-}
-function fromHexToOctal(hex)
-{
-  
-}
-function fromBinaryToDecimal(binary)
-{
-  
-}
-function fromOctalToDecimal(octal)
-{
-  
-}
-function fromHexToDecimal(hex)
-{
-  
-}
-function fromBinaryToHex(binary)
-{
-  
-}
-function fromDecimalToHex(decimal)
-{
-  
-}
-function fromOctalToHex(octal)
-{
-  
+  var input = document.getElementById('binary').value;
+  var binaryArray = input.split('');
+  var dec = 0;
+  binaryArray.map((binary) =>
+  {
+    decimal = decimal * 2;
+    decimal = decimal + binary;
+  });
+  decimal = parseInt(decimal / 2);
+  document.getElementById('decimal').value = dec;
+  fromDecimal();
 }
