@@ -80,23 +80,29 @@
 }
 function fromOctal()
 {
-  // use string.charCodeAt(1); for getting character codes
+  var octalArray = document.getElementById('octal').value.split('');
+  var decimal = 0;
+  var i = 0;
+  octalArray.map((octal) =>
+  {
+    decimal *= 8;
+    decimal += parseInt(octal);
+  });
+  document.getElementById('decimal').value = decimal;
 }
 function fromHex()
 {
-  
+    // use string.charCodeAt(1); for getting character codes
 }
 function fromBinary()
 {
-  var input = document.getElementById('binary').value;
-  var binaryArray = input.split('');
-  var dec = 0;
+  var binaryArray = document.getElementById('binary').value.split('');
+  var decimal = 0;
+  var i = 0;
   binaryArray.map((binary) =>
   {
-    decimal = decimal * 2;
-    decimal = decimal + binary;
+    decimal *= 2;
+    decimal += parseInt(binary);
   });
-  decimal = parseInt(decimal / 2);
-  document.getElementById('decimal').value = dec;
-  fromDecimal();
+  document.getElementById('decimal').value = decimal;
 }
